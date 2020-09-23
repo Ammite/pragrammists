@@ -1,0 +1,66 @@
+<html>
+	<head>
+		<title>Some </title>
+		<script type="text/javascript">
+			function run(){
+				let a = 0;
+
+				let f = Number(document.getElementById("i1").value);
+				let l = Number(document.getElementById("i2").value);
+
+				a = Math.random() * (l-f) + f;
+				a = Math.ceil(a);
+
+				document.getElementById('p3').innerHTML = "Random: " + String(a);
+			}
+
+		</script>
+		<script type="text/javascript">
+			function run_color(){
+				let array = ["red", "blue", "yellow", "gray", "black", "magenta"];
+				let a = 0;
+
+				a = Math.random() * array.length;
+				a = Math.ceil(a);
+
+				document.getElementById('p1').style.color = array[a];
+			}
+
+		</script>
+		<script type="text/javascript">
+			function run_font_1(){
+				let a = 0;
+
+				a = Math.random() * 30 + 10;
+				a = Math.ceil(a);
+
+				document.getElementById('p2').style = "font-size: " + String(a) + "px";
+
+				let array = ["red", "blue", "yellow", "gray", "black", "magenta"];
+
+				a = Math.random() * array.length;
+				a = Math.ceil(a);
+
+				document.getElementById('p2').style.color = array[a];
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Header</h1>
+		<p style="color: red" id="p1">Some text with random color</p>
+		<p id="p2" style="font-size: 20px">Some text with random font and color</p>
+
+		<p id="p3">Random: x</p>
+
+		<input placeholder="От" id="i1">
+		<input placeholder="До" id="i2">
+		<br><br>
+		<button onclick="run()"><p>Random</p></button>
+		<button onclick="run_color()"><p>Color</p></button>
+		<button onclick="run_font_1()"><p>Font</p></button>
+
+
+	</body>
+</html>
